@@ -1,0 +1,125 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  vih_kalendersiden.module: n/a
+#  vih_kalendersiden.info: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2012-10-09 13:35+0200\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: vih_kalendersiden.module:52
+msgid "Settings for the PDF calendar"
+msgstr ""
+
+#: vih_kalendersiden.module:57
+msgid "January"
+msgstr ""
+
+#: vih_kalendersiden.module:58
+msgid "February"
+msgstr ""
+
+#: vih_kalendersiden.module:59
+msgid "March"
+msgstr ""
+
+#: vih_kalendersiden.module:60
+msgid "April"
+msgstr ""
+
+#: vih_kalendersiden.module:61
+msgid "May"
+msgstr ""
+
+#: vih_kalendersiden.module:62
+msgid "June"
+msgstr ""
+
+#: vih_kalendersiden.module:63
+msgid "July"
+msgstr ""
+
+#: vih_kalendersiden.module:64
+msgid "August"
+msgstr ""
+
+#: vih_kalendersiden.module:65
+msgid "September"
+msgstr ""
+
+#: vih_kalendersiden.module:66
+msgid "October"
+msgstr ""
+
+#: vih_kalendersiden.module:67
+msgid "November"
+msgstr ""
+
+#: vih_kalendersiden.module:68
+msgid "December"
+msgstr ""
+
+#: vih_kalendersiden.module:73
+msgid "Starting month"
+msgstr ""
+
+#: vih_kalendersiden.module:81
+msgid "Number of months"
+msgstr ""
+
+#: vih_kalendersiden.module:88
+msgid "Starting year"
+msgstr ""
+
+#: vih_kalendersiden.module:95
+msgid "Printed on number of pages"
+msgstr ""
+
+#: vih_kalendersiden.module:102
+msgid "Format"
+msgstr ""
+
+#: vih_kalendersiden.module:105
+msgid "Landscape"
+msgstr ""
+
+#: vih_kalendersiden.module:106
+msgid "Portrait"
+msgstr ""
+
+#: vih_kalendersiden.module:113
+msgid "Get PDF"
+msgstr ""
+
+#: vih_kalendersiden.module:15;24
+msgid "PDF"
+msgstr ""
+
+#: vih_kalendersiden.module:20;29
+msgid "Create PDF"
+msgstr ""
+
+#: vih_kalendersiden.info:0
+msgid "VIH Kalendersiden"
+msgstr ""
+
+#: vih_kalendersiden.info:0
+msgid "Talks to kalendersiden.dk"
+msgstr ""
+
+#: vih_kalendersiden.info:0
+msgid "VIH"
+msgstr ""
+
