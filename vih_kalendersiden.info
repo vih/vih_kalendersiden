@@ -1,7 +1,8 @@
-core = "7.x"
-description = "Talks to kalendersiden.dk"
 name = "VIH Kalendersiden"
-package = "VIH"
-version = "7.x-0.1"
-
-
+package = VIH
+description = "Makes it possible to output the calendar as a pdf using kalendersiden.dk"
+core = 7.x
+php = 5.2.4
+version = 7.x-0.2
+project = vih_kalendersiden
+dependencies[] = vih_calendar
