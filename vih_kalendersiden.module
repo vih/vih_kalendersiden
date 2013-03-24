@@ -165,10 +165,10 @@ function vih_kalendersiden_pdf_generate($month = 3, $year = 2012, $months = 4, $
 
   foreach ($result as $event) {
     if (date('dmY', strtotime($event->field_field_date[0]['raw']['value'])) != date('dmY', strtotime($event->field_field_date_1[0]['raw']['value2']))) {
-      $events[] = 'fra ' .  date('d.m. ', strtotime($event->field_field_date[0]['raw']['value'])) . 'til ' . date('d.m.:', strtotime($event->field_field_date[0]['raw']['value2'])) . $event->node_title;
+      $events[] = 'fra ' .  date('d.m.Y ', strtotime($event->field_field_date[0]['raw']['value'])) . 'til ' . date('d.m.Y:', strtotime($event->field_field_date[0]['raw']['value2'])) . $event->node_title;
     }
     else {
-      $events[] = date('d.m.: ', strtotime($event->field_field_date[0]['raw']['value'])) . ' ' . $event->node_title;
+      $events[] = date('d.m.Y: ', strtotime($event->field_field_date[0]['raw']['value'])) . ' ' . $event->node_title;
     }
   }
 
