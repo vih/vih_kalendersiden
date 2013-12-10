@@ -6,3 +6,5 @@ php = 5.2.4
 version = 7.x-0.2
 project = vih_kalendersiden
 dependencies[] = vih_calendar
+
+files[] = vih_kalendersiden.admin.inc

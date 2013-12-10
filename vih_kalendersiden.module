@@ -29,7 +29,29 @@ function vih_kalendersiden_menu() {
     'description' => 'Create PDF',
   );
 
+  $items['admin/config/services/kalendersiden'] = array(
+    'title' => 'VIH kalendersiden.dk',
+    'description' => 'Manage kalendersiden.dk settings.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('vih_kalendersiden_admin_settings'),
+    'access arguments' => array('administer vih kalendersiden'),
+    'file' => 'vih_kalendersiden.admin.inc',
+    'type' => MENU_NORMAL_ITEM,
+  );
+
   return $items;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function billysbilling_permission() {
+  return array(
+    'administer vih kalendersiden' => array(
+    'title' => t('administer vih kalendersiden'),
+    'description' => t('Administer settings for VIH kalendersiden.dk'),
+    ),
+  );
 }
 
 /**
@@ -180,7 +202,7 @@ function vih_kalendersiden_pdf_generate($month = 3, $year = 2012, $months = 4, $
     'months' => $months,
     'pages' => $pages,
     'format' => $format,
-    'head' => 'Vejle Idrætshøjskole',
+    'head' => variable_get('vih_kalendersiden_headline'),
     'userdata' => $event_data,
   );
 

@@ -1,0 +1,20 @@
+<?php
+
+/**
+ * @file
+ * VIH Kalendersiden install settings.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function vih_kalendersiden_install() {
+  variable_set('vih_kalendersiden_headline', 'Vejle Idrætshøjskole');
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function vih_kalendersiden_uninstall() {
+  variable_del('vih_kalendersiden_headline');
+}
