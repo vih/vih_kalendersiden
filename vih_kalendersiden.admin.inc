@@ -17,7 +17,7 @@ function vih_kalendersiden_admin_settings() {
     '#description' => t('Headline to show on the calendar.'),
   );
 
-  $form['vih_kalender_logo_image'] = array(
+  $form['vih_kalendersiden_logo_image'] = array(
     '#type' => 'managed_file',
     '#name' => 'vih_kalender_logo_image',
     '#title' => t('Logo'),
@@ -26,14 +26,14 @@ function vih_kalendersiden_admin_settings() {
     '#upload_location' => 'public://kalendersiden/',
     '#default_value' => variable_get('vih_kalendersiden_logo_image', ''),
   );
-  $form['#submit'][] = 'vih_kalendersiden_admin_settings_submit';
+  $form['#submit'][] = 'vih_kalendersiden_admin_file_submit';
   return system_settings_form($form);
 }
 
 /** 
  * Implements hook_settings_submit().
  */
-function vih_kalendersiden_admin_settings_submit($form, &$form_state) {
+function vih_kalendersiden_admin_file_submit($form, &$form_state) {
   if (isset($form_state['values']['vih_kalendersiden_logo_image'])) {
     $file = file_load($form_state['values']['vih_kalenderside_logo_image']);
     $file->status = FILE_STATUS_PERMANENT;
@@ -43,5 +43,7 @@ function vih_kalendersiden_admin_settings_submit($form, &$form_state) {
     else {
       drupal_set_message(t('The file has not been saved.'));
     }
+    variable_set('vih_kalendersiden_logo_image', $file->fid);
+    unset($form_state['values']['vih_kalendersiden_logo_image']);
   }
 }
