@@ -206,7 +206,6 @@ function vih_kalendersiden_pdf_generate($month = 3, $year = 2012, $months = 4, $
     'userdata' => $event_data,
   );
 
-
   $array = array();
 
   foreach ($data as $key => $value) {
@@ -217,23 +216,20 @@ function vih_kalendersiden_pdf_generate($month = 3, $year = 2012, $months = 4, $
   $array[] = 'info[]=holidays';
   $array[] = 'info[]=weeks';
 
-  $post = implode('&', $array);
+  if (variable_get('vih_kalendersiden_logo_image')) {
+    $image = file_load(variable_get('vih_kalendersiden_logo_image'));
+    $array[] = 'logo-file[]=' . $image->uri;
+  }
 
+  $post = implode('&', $array);
+  
   $options = array(
     'method' => 'POST',
     'data' => $post,
     'timeout' => 15,
     'headers' => array('Content-Type' => 'application/x-www-form-urlencoded'),
   );
-  var_dump(variable_get('vih_kalendersiden_logo_image'));
-  if (variable_get('vih_kalendersiden_logo_image')) {
-    $image = file_load(variable_set('vih_kalendersiden_logo_fid'));
-    $options['logo-file[]'] = variable_get('vih_kalendersiden_logo_image');
-  }
   
-  print_r($options);
-  exit;
-
   $url = 'http://kalendersiden.dk/generate.php';
 
   $result = drupal_http_request($url, $options);
@@ -242,5 +238,6 @@ function vih_kalendersiden_pdf_generate($month = 3, $year = 2012, $months = 4, $
   drupal_add_http_header('Content-type', 'application/pdf');
   drupal_add_http_header('content-disposition', 'attachment; filename="vih-kalender-' . check_plain($year) . '-' . check_plain($month) . '.pdf');
   print $result->data;
-  exit();
+  drupal_exit();
 }
+

@@ -35,15 +35,16 @@ function vih_kalendersiden_admin_settings() {
  */
 function vih_kalendersiden_admin_file_submit($form, &$form_state) {
   if (isset($form_state['values']['vih_kalendersiden_logo_image'])) {
-    $file = file_load($form_state['values']['vih_kalenderside_logo_image']);
+    $file = file_load($form_state['values']['vih_kalendersiden_logo_image']);
     $file->status = FILE_STATUS_PERMANENT;
-    if (file_save($file)) {
+
+    $uploaded = file_save($file);
+    if ($uploaded) {
       drupal_set_message(t('The file has been saved.'));
     }
     else {
       drupal_set_message(t('The file has not been saved.'));
     }
     variable_set('vih_kalendersiden_logo_image', $file->fid);
-    unset($form_state['values']['vih_kalendersiden_logo_image']);
   }
 }
