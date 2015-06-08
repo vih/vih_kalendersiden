@@ -102,7 +102,7 @@ function vih_kalendersiden_form($form_state) {
     '#type' => 'textfield',
     '#title' => t('Number of months'),
     '#required' => TRUE,
-    '#default_value' => 3,
+    '#default_value' => 6,
   );
 
   $form['vih_kalendersiden']['year'] = array(
