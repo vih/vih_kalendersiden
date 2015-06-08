@@ -45,7 +45,7 @@ function vih_kalendersiden_menu() {
 /**
  * Implements hook_permission().
  */
-function billysbilling_permission() {
+function vih_kalendersiden_permission() {
   return array(
     'administer vih kalendersiden' => array(
     'title' => t('administer vih kalendersiden'),
