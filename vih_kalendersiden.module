@@ -229,7 +229,7 @@ function vih_kalendersiden_pdf_generate($month = 3, $year = 2012, $months = 4, $
 
   $result = drupal_http_request($url, $options);
   
-  if (empty(print $result->data)) {
+  if (empty($result->data)) {
     drupal_set_message(t('Kalendersiden.dk is not returning any data.'), 'error');
     return;
   }
