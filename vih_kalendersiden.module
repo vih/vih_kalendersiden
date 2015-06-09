@@ -206,7 +206,6 @@ function vih_kalendersiden_pdf_generate($month = 3, $year = 2012, $months = 4, $
     'userdata' => $event_data,
   );
 
-
   $array = array();
 
   foreach ($data as $key => $value) {
@@ -229,6 +228,11 @@ function vih_kalendersiden_pdf_generate($month = 3, $year = 2012, $months = 4, $
   $url = 'https://kalendersiden.dk/generate.php';
 
   $result = drupal_http_request($url, $options);
+  
+  if (empty(print $result->data)) {
+    drupal_set_message(t('Kalendersiden.dk is not returning any data.'), 'error');
+    return;
+  }
 
   drupal_add_http_header('Cache-Control', 'must-revalidate, post-check=0, pre-check=0');
   drupal_add_http_header('Content-type', 'application/pdf');
