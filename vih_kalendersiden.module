@@ -43,6 +43,25 @@ function vih_kalendersiden_menu() {
 }
 
 /**
+ * Implements hook_menu_local_tasks_alter().
+ */
+function hook_menu_local_tasks_alter(&$data, $router_item, $root_path) {
+  // Add a link to the page to choose which date array is needed.
+  $data['actions']['output'][] = array(
+    '#theme' => 'menu_local_task',
+    '#link' => array(
+      'title' => t('PDF'),
+      'href' => 'kalender/pdf',
+      'localized_options' => array(
+        'attributes' => array(
+          'title' => t('Print a PDF'),
+        ),
+      ),
+    ),
+  );
+}
+
+/**
  * Implements hook_permission().
  */
 function vih_kalendersiden_permission() {
